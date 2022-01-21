@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <title>Document</title>
+
+    <style>
+        #payment_container {
+            /* border: 1px solid black; */
+            width: 1350px;
+            background-color: #ffffff;
+            margin-top: 180px;
+        }
+
+        #checkout_id_steps {
+            border: 1px solid #d3d3d3;
+            height: 44px;
+            width: 100%;
+        }
+
+        #checkout_id_steps>div {
+            display: table-cell;
+        }
+
+        #div_steps1 {
+            float: left;
+            cursor: pointer;
+            font-size: 16px;
+            color: #939393;
+            border-right: 1px solid #cfcfcf;
+            width: 24.9%;
+            height: 100%;
+            text-align: center;
+            cursor: pointer;
+
+        }
+
+        #div_steps2 {
+            border-right: 1px solid #cfcfcf;
+            float: left;
+            font-size: 15px;
+            color: #333333;
+            background: #ededed;
+            width: 24.9%;
+            height: 100%;
+            text-align: center;
+            cursor: pointer;
+
+        }
+
+        #div_steps3 {
+            border-right: 1px solid #cfcfcf;
+            width: 24.9%;
+            height: 100%;
+            float: left;
+            font-size: 15px;
+            color: #333333;
+            background: #ededed;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #div_steps4 {
+            border-bottom: 5px solid #5EA70E;
+            width: 24.5%;
+            height: 100%;
+            float: left;
+            font-size: 15px;
+            color: #333333;
+            background: #ededed;
+            border-right: 1px solid #cfcfcf;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .div_steps_one {
+            padding-top: 15px;
+        }
+
+        .checkout_head {
+            margin-left: 30px;
+        }
+
+        /* =============================================================== */
+        .main_payment_options {
+            display: flex;
+            gap: 30px;
+        }
+
+        .main_payment_options1 {
+            width: 25%;
+            height: 400px;
+            /* border: 1px solid red; */
+        }
+
+        .main_payment_options1_desc {
+            width: 70%;
+            height: 400px;
+            /* border: 1px solid blue; */
+        }
+
+        .main_payment_options1_one {
+            margin-left: 20px;
+            border: 1px solid #939393;
+            height: 60px;
+            width: 90%;
+            margin-top: 5px;
+        }
+
+        .main_payment_options1_two {
+            padding: 10px;
+        }
+
+        .wallet {
+            display: flex;
+            gap: 10px;
+        }
+        .pay_now a > button {
+            width: 200px;
+            background-color: #5EA70E;
+            margin-left: 50px;
+            height: 40px;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header_products"></div>
+
+    <div id="payment_container">
+
+        <div id="checkout_container">
+
+            <div id="checkout_id_steps">
+                <div id="div_steps1">
+                    <div class="div_steps_one">
+                        <span>1</span>
+                        <strong>Login</strong>
+                    </div>
+                </div>
+
+                <div id="div_steps2">
+                    <div class="div_steps_one">
+                        <span>2</span>
+                        <strong>Address Details</strong>
+                    </div>
+                </div>
+
+                <div id="div_steps3">
+                    <div class="div_steps_one">
+                        <span>3</span>
+                        <strong>Delivary Slot</strong>
+                    </div>
+                </div>
+
+                <div id="div_steps4">
+                    <div class="div_steps_one">
+                        <span>4</span>
+                        <strong>Payment Options</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout_head">
+                <h3>PICK A &nbsp<span style="color: #b61671;">PAYMENT METHOD</span></h3>
+            </div>
+
+
+            <div class="main_payment_options">
+                <div class="main_payment_options1">
+
+                    <div class="main_payment_options1_one">
+                        <div class="main_payment_options1_two">Pay Gateway (Amex, Visa, Master Card, Diners, UPI, Net
+                            Banking)
+                            <span style="margin-left: 90px;">
+                                <img src="./Images/red_set_green_icon_right_arrow_button_navigation_arrows_single.jpg"
+                                    alt="" width="15px" height="15px"></span>
+                        </div>
+                    </div>
+                    <div class="main_payment_options1_one">
+                        <div class="main_payment_options1_two">
+                            <div class="wallet">
+                                <div><img src="https://d1z88p83zuviay.cloudfront.net/Images/paytm-option.jpg" alt=""
+                                        height="40px" width="80px"></div>
+                                <div style="margin-top: 12px;">Wallet</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="main_payment_options1_one">
+                        <div class="main_payment_options1_two">
+                            <div class="wallet">
+                                <div><img src="https://www.naturesbasket.co.in/Images/mobikwik-wallet.png" alt=""
+                                        height="40px" width="80px"></div>
+                                <div style="margin-top: 12px;">Wallet</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main_payment_options1_one">
+                        <div class="main_payment_options1_two">
+                            <div class="wallet">
+                                <div><img src="https://www.naturesbasket.co.in/Images/payUMoney-wallet.png" alt=""
+                                        height="40px" width="80px"></div>
+                                <div style="margin-top: 12px;">Wallet</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="main_payment_options1_one">
+                        <div class="main_payment_options1_two">
+                            <div class="wallet">
+                                <div><img src="./Images/icon-icici-pockets.png" alt="" height="40px" width="80px"></div>
+                                <div style="margin-top: 12px;">ICICI</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main_payment_options1_one">
+                        <div class="main_payment_options1_two">
+                            <div class="wallet">
+                                <div><img src="https://www.naturesbasket.co.in/Images/sodexo.jpeg" alt="" height="40px"
+                                        width="80px"></div>
+                                <div style="margin-top: 12px;">Payment</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="main_payment_options1_desc">
+                    <h3>Pay Using Credit Card / Debit Card / Net Banking </h3>
+
+                    <div class = "pay_now">
+                        <a href="payment_details.html"><button>Pay now</button></a>
+                   </div>
+                   
+                     <p>
+                         <h4 style = "color: #b61671;"> Credit Card </h4>
+                       <!-- <span style = "color: #b61671;"></span> -->
+                        You can choose from the vast array of credit card options like VISA Credit Card | Master Credit Card | American Express Credit Card | Diners Club Card | JCB Card etc.
+                      <h4 style = "color: #b61671;"> Debit Card </h4>
+                        AXIS Bank | Canara Bank | Citibank | Corporation Bank | Deutsche Bank | HDFC Bank | ICICI Bank | Indian Overseas Bank | ING Vyasa Bank | Karur Vysya Bank | Punjab National Bank | State Bank Of India, etc
+                      <h4 style = "color: #b61671;">  Net Banking</h4>
+                        ABN AMRO Bank | AXIS Bank | Bank Of India | Bank Of Punjab | Citibank Bank Account Online | Corporation Bank | Federal Bank | HDFC Direct Pay | ICICI Bank | IDBI Bank | Punjab National Bank | State Bank Of India | Union Bank Of India | YES BANK, etc
+                        Also you can exercise ITZ Cash Card and PayMate (Mobile Payment)
+                     </p>
+                </div>
+
+
+              
+            </div>
+        </div>
+
+        <div id = "footer_container" style="margin-top: 70px;"></div>
+</body>
+
+</html>
+
+<script type="module">
+
+    import header from "./scripts/header.js";
+
+let header_products = document.getElementById("header_products");
+header_products.innerHTML = header();
+
+
+import footer from "./scripts/footer.js";
+
+let footer_container = document.getElementById("footer_container");
+footer_container.innerHTML = footer();
+
+</script>
