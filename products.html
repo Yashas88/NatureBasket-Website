@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <title>Document</title>
+
+    <style>
+        #header {
+            height: 200px;
+            width: 1350px;
+        }
+
+        .products-page {
+            display: flex;
+            margin-top: 170px;
+        }
+        .sidebar {
+            width: 200px;
+            height: 500px;
+        }
+        #show_products {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 50px 50px;
+        }
+        /* .img {
+               width: 300px;
+               height: 450px;
+        }  */
+        #cart_button {
+            color: white;
+            height: 40px;
+            width: 80px;
+            background-color: #92be4d;
+            border: none;
+            border-radius: 10px;
+        }
+        #mrp_cart {
+            display: flex;
+            gap: 15px;
+        }
+        
+    
+    </style>
+</head>
+
+<body>
+
+    <div id = "header_products"></div>
+
+    <div class = "products-page">
+        <div class="sidebar">
+        
+        </div>
+    <div id = "show_products"></div>
+
+    <!-- ------------------------------------------- -->
+    <div class="filter-bar">
+        <div>
+            <select id="sorting-filter">
+                <option value="default">Featured</option>
+                <option value="A-Z">Alphabatically, A-Z</option>
+                <option value="Z-A">Alphabatically, Z-A</option>
+                <option value="price-low-high">Price, low to high</option>
+                <option value="price-high-low">Price, high to low</option>
+            </select>
+        </div>
+    </div>
+
+    </div>
+
+    <div id = "footer_container"></div>
+</body>
+
+</html>
+
+<script type="module">
+
+
+ // header products--------------------------
+
+ import header from "./scripts/header.js";
+
+let header_products = document.getElementById("header_products");
+header_products.innerHTML = header();
+
+
+import footer from "./scripts/footer.js";
+
+let footer_container = document.getElementById("footer_container");
+footer_container.innerHTML = footer();
+// ==========================================================
+    var data = [
+
+        {
+            title: "NATURE VLY CRU GRA BAR RST ALMD 252g",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/e8042587-6211-4304-b8e3-c681a5ea90cb_425x425.jpg",
+            price: 360,
+            description: [
+                "Product of : Spain Nature",
+                "Valley is a good source of fiber, which helps you in feeling full longer. Made with high quality natural wholesome ingredients it is a tasty way to incorporate healthy oats in your diet."
+            ],
+            know_more: [
+                "Nature Valley Roasted Almond Crunchy Granola Bars 252 g Pack contains crunchy cereal bars. Made from rolled wholegrain oats, these are carefully baked until crisp. you'll find two bars in every pack so They're perfect for anyone looking for a delicious, satisfying snack. Each bar is free from preservatives and artificial colors.",
+                "# Lactose free & suitable for vegetarians.",
+                "# Source of fiber, protein and essential nutrients.",
+                "# Individually wrapped for easy consumption."
+            ],
+            category: "Heart healthy foods",
+            id: "HHF01",
+        },
+
+        {
+            title: "COLAVITA EXT. VIRGIN OLIVE OIL PET 1ltr",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/7fd18231-c231-45b2-b440-156e345a337e_425x425.jpg",
+            price: "1750",
+            description: [
+                "Product of : ITALY.",
+                "Colavita Extra Virgin Olive Oil is the quintessential every day oil with delicate flavor that has the perfect balance of fruity and spicy notes"
+            ],
+            know_more: [
+                "Colavita Extra Virgin Olive Oil is the perfect every day oil with delicate flavor that has the perfect balance of fruity and spicy notes. We have sourced selections from new harvest oils to create this traditional Colavita flavor, which has been the trademark of the Colavita family legacy. It is an ideal oil for virtually all of your cooking needs, from light sauteing to drizzling over your favorite dishes. During the colder months, olive oil will congeal during shipping.",
+                "#Cold production obtained",
+                "#harvested from the finest groves",
+                "#Best Everyday Cooking Oil"
+
+            ],
+            category: "Healthy heart foods",
+            id: "HHF02",
+        },
+
+        {
+            title: "Raw Pumpkin Seeds - Healthy Alternatives",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/c2c0610a-4ec3-4807-b89b-9a8e6a5d5a40_425x425.jpg",
+            price: "229",
+            description: [
+                "",
+                ""
+            ],
+            know_more: [
+                "",
+                "",
+                "",
+                ""
+            ],
+            category: "Healthy heart foods",
+            id: "HHF03",
+        },
+
+        {
+            title: "HA PERUVIAN QUINOA WHITE 500g",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/b2cdd121-4dd7-48f1-b8f7-96869396a477_425x425.jpg",
+            price: "450",
+            description: [
+                "",
+                ""
+            ],
+            know_more: [
+                "",
+                "",
+                "",
+                ""
+            ],
+            category: "Healthy heart foods",
+            id: "HHF04",
+        },
+
+        {
+            title: "AASHIRVAAD ATTA WHOLE WHEAT 5kg",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/0aab4815-e06f-438f-807f-1505ff434347_425x425.jpg",
+            price: "250",
+            description: [
+                "",
+                ""
+            ],
+            know_more: [
+                "Aashirvaad Atta is made from the choicest grains which are heavy on the palm, golden amber in colour and hard in bite." ,
+                "It is carefully ground using modern 'chakki - grinding' process for the perfect balance of colour, taste and nutrition which also ensures that Aashirvaad Atta contains 0% Maida and is 100% Sampoorna Atta.",
+                "The dough made from Aashirvaad Atta absorbs more water, hence rotis remain softer for longer",
+               
+            ],
+            category: "Healthy heart foods",
+            id: "HHF05",
+        },
+
+        {
+            title: "BORTOLLI EXTRA VIRGIN OIL 1L",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/07cb6fa2-7abd-4ebe-9e16-10f256b9b37f_425x425.jpg",
+            price: "849",
+            description: [
+                "Product of : Spain.",
+                "Use this nutritious olive oil to cook all your recipes in a healthy way!"
+            ],
+            know_more: [
+                "If you want to cook healthy and nutritious meals for your family then Borges' Olive Oil is the perfect product for you. This premium quality oil is packed in a freshness-sealed bottle that will enable you to cook wholesome meals for your family.",
+                " Use this highly beneficial olive oil to cook all your delicacies and dishes, and ensure that your family remains hale and hearty always.",
+            ],
+            category: "Healthy heart foods",
+            id: "HHF06",
+        },
+
+        {
+            title: "HOME DELITE FLAXSEED BHAKARWADI 320G",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/cdbc52b1-17a7-4286-85f5-d7054cdf420b_425x425.jpg",
+            price: "195",
+            description: [
+                "Product of : INDIA."
+            ],
+            know_more: [
+                "",
+                "",
+                "",
+                ""
+            ],
+            category: "Healthy heart foods",
+            id: "HHF07",
+        },
+
+        {
+            title: "HOME DELITE FLAXSEED BHAKARWADI 320",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/cdbc52b1-17a7-4286-85f5-d7054cdf420b_425x425.jpg",
+            price: "195",
+            description: [
+                "Product of : Spain.",
+                "An Ideal for frying, roasting and baking . Cholestral fre and Good for homemade mayonnaise"
+            ],
+            know_more: [
+                "Borges is one of the leading producers globally of a variety of organic foods which are great in taste and health.",
+                " All of their products are sourced completely naturally in order to ensure maximum satisfaction and benefits.",
+                " Borges Extra Light Olive Oil is made using 100% Natural olives which are perfect to taste.",
+                " This makes it great in terms of health and nutrition as well as gives it a bold flavour which is loved by all."
+            ],
+            category: "Healthy heart foods",
+            id: "HHF08",
+        },
+
+        {
+            title: "BERTOLLI EXTRA VIRGIN OLIVE OIL 1L",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/07cb6fa2-7abd-4ebe-9e16-10f256b9b37f_50x50.jpg",
+            price: "899",
+            description: [
+                "Product of : INDIA.",
+                "Bertolli Extra Virgin is an extra virgin olive oil with a rich and fragrant taste and a pleasant aroma."
+            ],
+            know_more: [
+                "Bertolli Extra Virgin Olive Oil gives a generous hint of the Mediterranean to your recipes, without overpowering other ingredients. Ideal for adding a rich and fragrant flavor to salad dressings, pasta sauces and marinades, or for dipping with warm bread, fresh from the oven. A touch of Bertolli is all it takes to turn everyday dishes into something special.",
+                 "# Comes from the first cold pressing of olives.",
+                 "# Light weight bottle with an easy to grip handle."
+            ],
+            category: "Healthy heart foods",
+            id: "HHF09",
+        },
+
+        {
+            title: "HA CHANA JOR LIME 150 GM",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/de324ace-9f78-4c43-829f-00331cf03b65_50x50.jpg",
+            price: "109",
+            description: [
+                "Product of : INDIA.",
+                "Spicy lime-flavored gram (chana) mix that is tempered with black pepper for that extra zest."
+            ],
+            know_more: [
+                "A healthy replica of the street version, the Healthy Alternatives Roasted Chana Jor with Lime from Nature’s Basket is flavored with black salt.",
+                " It can be served with a sprinkle of cilantro, chopped onions and tomatoes for a creating a scrumptious flavor.",
+                " This snack is rich in protein, dietary fiber, and vitamins. Serve it with a cup of hot tea to enhance the culinary experience.",
+            ],
+            category: "Healthy heart foods",
+            id: "HHF10",
+        },
+
+        {
+            title: "HA ROASTED CHANA LIME 150 GM",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/a5b71f42-de91-4b2b-99fa-2a528bd04c7f_50x50.jpg",
+            price: "109",
+            description: [
+                "Product of : INDIA.",
+                "Snack on these healthy and delicious lime-flavored roasted grams (chana) for a unique culinary experience."
+            ],
+            know_more: [
+                "Healthy Alternatives Chana Lime Roasted from Nature’s Basket is a great snack for any time of the day and has a rich nutty taste.",
+                " It can be served with a sprinkle of cilantro, chopped onions and tomatoes for a creating a scrumptious flavor. This snack is rich in protein, dietary fiber and vitamins.",
+                 "You can eat it with dal, rice, or vegetables for a distinct flavor."
+            ],
+            category: "Healthy heart foods",
+            id: "HHF11",
+        },
+
+        {
+            title: "HA MULTI GRAIN GLUTENFREE PASTA 250G",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/6bcd9240-4cd7-4d4d-bd00-a0694cd03453_50x50.jpg",
+            price: "199",
+            description: [
+                "Product of : INDIA.",
+                "Your loved ones will relish this veggie-loaded pasta that is delicious and promises good health with the multigrains"
+            ],
+            know_more: [
+                "A unique combination of whole grains—rice, quinoa, and amaranth and more, this pasta is enriched with nutrients. Multi grain pasta, enabling coeliac and gluten intolerant pasta lovers to have a nutritionally varied diet. Outstanding taste, consistency and nutritive value make this gluten free pasta tempting and wholesome.",
+                "# Gluten-free alternative",
+                "# Rich, nutty flavor",
+                "# Loaded with dietary fiber and protein"
+            ],
+            category: "Healthy heart foods",
+            id: "HHF12",
+        },
+
+        {
+            title: "HA QUINOA 500g",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/53afc1b1-c497-48e1-b7a0-0cf73b61ee45_50x50.jpg",
+            price: "199",
+            description: [
+                "Product of : INDIA.",
+                "Try a quinoa salad that is a healthy eater's dream: flavorful, full of protein and veggies"
+            ],
+            know_more: [
+                "Quinoa is an excellent ingredient for gluten free recipes. It imparts a delicate, nutty flavor and is a versatile addition to sweet and savory dishes. A complete protein, quinoa is extremely nutritious. Quinoa has an excellent amino acid profile, as it contains all nine essential amino acids making it a complete-protein source. Use quinoa pasta to enjoy gluten-free treat!",
+                "# Gluten-free alternative",
+                "# Rich, nutty flavor",
+                "# Loaded with dietary fiber and protein"
+            ],
+            category: "Healthy heart foods",
+            id: "HHF13",
+        },
+
+        {
+            title: "GEMINI PURE SUNFLOWER OIL PP 1ltr",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/2e604458-c12d-443f-b6a9-c6f5943fd5b5_50x50.jpg",
+            price: "225",
+            description: [
+                "Product of : INDIA.",
+                "Sunflower oil imparts a delicious taste and aroma to cooked food, when used"
+            ],
+            know_more: [
+                "Gemini Refined Sunflower Oil is the edible cooking and refined oil made from sunflower seeds. It is one of the widely used cooking oil in India. Sunflower oil imparts a delicious taste and aroma to cooked food, when used. Gemini Refined Sunflower Oil is very good for heart and for lowering cholesterol levels. This cooking oil is ideal for health conscious people and for those who want to reduce weight.",
+                "#Cargill Foods",
+                "#blends and bakery shortenings",
+                "#health conscious"
+            ],
+            category: "Healthy heart foods",
+            id: "HHF14",
+        },
+
+        {
+            title: "NATURES RAGI FLOUR 500g",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/cca0a17e-affb-4386-96e5-043a2a5bee6a_50x50.jpg",
+            price: "69",
+            description: [
+                "Product of : INDIA.",
+            ],
+            know_more: [
+                "",
+            ],
+            category: "Healthy heart foods",
+            id: "HHF15",
+        },
+
+        {
+            title: "AASHIRVAAD ATTA MULTI GRAIN 1kg",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/0aab4815-e06f-438f-807f-1505ff434347_425x425.jpg",
+            price: "64",
+            description: [
+                "Product of : INDIA.",
+            ],
+            know_more: [
+        
+                "Aashirvaad Atta With Multigrains is a unique combination of 6 natural grains- Wheat, Chana, Oats, Maize and Psyllium husk. Aashirvaad Atta With Multigrains provides a wholesome nutrtion and keeps you healthy. It absorbs more water, which results in smooth, soft and great tasting chapattis."
+            ],
+            category: "Healthy heart foods",
+            id: "HHF16",
+        },
+
+        {
+            title: "SAFFOLA SALT PLUS 1kg",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/9962d649-00a5-4040-8477-e373bedd62f5_50x50.jpg",
+            price: "35",
+            description: [
+                "Product of : INDIA.",
+                "The backbone of all the innovations in your kitchen is salt. Because, that's what makes or breaks the dish. So, buy Saffola Salt Plus that promises to give your savories the right amount of zest."
+            ],
+            know_more: [
+                "Saffola Salt Plus 1 kg Pack has less sodium making it an healthier alternative to regular table salt. Diets low in sodium help reduce the risk of high blood pressure. Saffola Less Sodium Salt is extracted naturally from the sea and then enriched with iodine and minerals. Saffola Less Sodium Salt can be used as regular salt to add a pinch of health with your everyday meal.",
+                "# Provides essential nutrients, calcium and iodine",
+                "# Has less sodium content.",
+                "# Ideal food for whole family."
+            ],
+            category: "Healthy heart foods",
+            id: "HHF17",
+        },
+
+        {
+            title: "Psyllium Husk - Organic India",
+            images: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/68b7a605-7f7a-4aeb-bae0-7378d0b20dce_50x50.jpg",
+            price: "210",
+            description: [
+                "Product of : INDIA.",
+                "Psyllium is one of the best forms of fiber and provides a multitude of benefits. Organic India brings you 100% organic psyllium which is an excellent source of dietary fiber."
+            ],
+            know_more: [
+                "",
+                "",
+                "",
+                ""
+            ],
+            category: "Healthy heart foods",
+            id: "HHF18",
+        },
+
+    //     {
+    //         title: "",
+    //         images: "",
+    //         price: "",
+    //         description: [
+    //             "",
+    //             ""
+    //         ],
+    //         know_more: [
+    //             "",
+    //             "",
+    //             "",
+    //             ""
+    //         ],
+    //         category: "Healthy heart foods",
+    //         id: "HHF0",
+    //     },
+
+    //     {
+    //         title: "",
+    //         images: "",
+    //         price: "",
+    //         description: [
+    //             "",
+    //             ""
+    //         ],
+    //         know_more: [
+    //             "",
+    //             "",
+    //             "",
+    //             ""
+    //         ],
+    //         category: "Healthy heart foods",
+    //         id: "HHF0",
+    //     },
+    ];
+
+    //   store in a local storage
+    localStorage.setItem("NaturesBasketProducts", JSON.stringify(data));
+
+    // document.querySelector("body").innerHTML =
+    //     "<h1>Data is set to your localstorage named as Nature Basket Products, plz confirm on your browser.</h1>"
+
+   
+    var all_products = document.getElementById("show_products");
+
+    showData(data);
+    var Prod_detail = [];
+
+    function showData(arr) {
+        // console.log(arr);
+        arr.forEach((items) => {
+            let div = document.createElement("div");
+
+            let img = document.createElement("img");
+            img.src = items.images;
+            img.style.height = "250px";
+            img.style.width = "150px";
+
+            let name_title = document.createElement("p");
+            name_title.innerText = items.title;
+
+            
+            let div1 = document.createElement("div");
+            div1.id = "mrp_cart";
+
+            let amt = document.createElement("p");
+            amt.innerText = `MRP ${items.price}`;
+
+           let cart_btn = document.createElement("button");
+           cart_btn.innerText = "ADD";
+           cart_btn.id = "cart_button";
+           cart_btn.addEventListener("click", function() {
+               window.location.href = "cart.html";
+           })
+        
+           div1.append(amt, cart_btn);
+
+           div.addEventListener("click", function(){
+                    storeData(items);
+                })
+
+               
+
+
+
+            div.append(img, name_title, div1);
+
+            all_products.append(div);
+            // all_products.append(div1);
+
+
+        });
+
+        // function to redirect the page to product details page
+    
+        function storeData(values){
+                console.log(values);
+                Prod_detail.push(values);
+                 localStorage.setItem("Product_values", JSON.stringify(Prod_detail));
+                 window.location.href = "cart.html";
+            }
+
+    }
+
+</script>
+
+
+<!-- {
+    title: "",
+    images: "",
+    price: "",
+    description:[
+      "",
+      ""
+    ],
+    know_more: [
+    "",
+    "",
+    "",
+    ""
+    ],
+    category: "Healthy heart foods",
+    id: "HHF0",
+}, -->
