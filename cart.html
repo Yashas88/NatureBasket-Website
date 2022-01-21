@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+
+    <style>
+        .cart_imgae {
+            margin-top: 160px;
+            margin-left: 10px;
+        }
+
+        /* .cartpage_details {
+            margin-left: 35px;
+        } */
+        .slash {
+            color: black;
+            margin-left: 10px;
+            font-weight: 500;
+            border-left: 1px solid black;
+        }
+
+        .refresh_icon {
+            padding: 10px;
+        }
+
+        .refresh_icon1 {
+            padding: 10px;
+        }
+
+        .refresh_cart {
+            margin-left: 40px;
+        }
+
+        .button_for_checkout_continue {
+            display: flex;
+            margin-left: 800px;
+            gap: 30px;
+        }
+
+        .button_for_checkout_continue2 {
+            display: flex;
+            margin-left: 700px;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .continue_shopping {
+            background: transparent;
+            border: 2px solid green;
+            width: 200px;
+            height: 30px;
+            border-radius: 10px;
+            padding-top: 15px;
+            cursor: pointer;
+        }
+
+        .proceed_checkout {
+            background: #92be4d;
+            /* color: beige; */
+            width: 250px;
+            height: 30px;
+            border-radius: 10px;
+            padding-top: 15px;
+            cursor: pointer;
+        }
+
+        .proceed_checkout button {
+            color: #f2f2f2;
+        }
+
+        .cart_hr {
+            margin-top: 20px;
+        }
+
+        .cart_lists_items {
+            border-bottom: 2px solid #92be4d;
+            color: #363635;
+            width: 600px;
+            margin-left: 350px;
+        }
+
+        .cart_lists_items ul {
+            display: flex;
+            gap: 20px;
+            list-style-type: none;
+        }
+
+        .cart_list_name {
+            width: 600px;
+        }
+
+        .cart_list_otheritems {
+            width: 200px;
+        }
+
+        #get_cart_items {
+            /* background-color: aquamarine; */
+            /* height: 200px; */
+            width: 1225px;
+            margin-top: 20px;
+        }
+
+        .calc_total_amt {
+            margin-left: 900px;
+            margin-top: 200px;
+        }
+        .total_amt {
+            display: flex;
+            gap:20px;
+        }
+
+        .restock_basket {
+            text-align: center;
+            color: #b71761;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .restock_basket_items {
+            height: 100px;
+            border: 1px solid rgb(167, 165, 163);
+        }
+
+        #price_div {
+            margin-top: -200px;
+            margin-left: 800px;
+        }
+
+        #image_text {
+            margin-left: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1>Cart Page</h1> -->
+
+    <div id="cart_container">
+
+        <div id="cart_header"></div>
+
+        <div id="cart_details">
+
+            <div class="cart_imgae">
+                <img src="./Images/websitecart.png" alt="">
+            </div>
+
+            <!-- <div class = "cartpage_details"> -->
+
+            <div class="refresh_cart">
+                <p>MY CART <span class="slash"></span><span class="refresh_icon"><img src="./Images/refresh.png"
+                            height="20px" width="20px" alt=""><span class="refresh_icon1">Refresh</span></span></p>
+            </div>
+
+            <div class="button_for_checkout_continue">
+                <div class="continue_shopping">
+                    <a href="index.html"> <button>CONTINUE SHOPPING</button></a></div>
+                <div class="proceed_checkout">
+                    <a href="checkout.html">
+                        <button>PROCEED TO CHECKOUT</button></a></div>
+            </div>
+
+            <div class="cart_hr">
+                <hr style="width: 500px;color: rgb(167, 165, 163);">
+            </div>
+
+
+            <div class="cart_lists_items">
+                <ul>
+                    <li class="cart_list_name">Name</li>
+                    <li class="cart_list_otheritems" id="price_li">Price</li>
+                    <!-- <li class="cart_list_otheritems">Discount</li>
+                    <li class="cart_list_otheritems">Qty</li>
+                    <li class="cart_list_otheritems">Sub-Total</li> -->
+                </ul>
+            </div>
+            <!-- get cart items from product page------------------------------------------------------------ -->
+            <div id="get_cart_items">
+
+
+            </div>
+
+            <!-- <div class="cart_hr">
+                <hr style="width: 500px;color: rgb(167, 165, 163);">
+            </div> -->
+
+            <!-- cart count -->
+            <div class="calc_total_amt">
+                <!-- <div class="sub_total">Sub-Total:</div> -->
+                <div class="delivery_charges">Delivery Charges:<span
+                        style="margin-left: 20px;font-weight: 600;">000.00</span></div>
+                <div class="total_amt">
+                    <div>
+                        <h3>TOTAL:</h3>
+                    </div>
+                    <div><h3 id = "total_amt"></h3></div>
+
+                </div>
+            </div>
+
+            <div class="button_for_checkout_continue2">
+                <div class="continue_shopping">
+                    <a href="index.html"> <button>CONTINUE SHOPPING</button></a></div>
+
+                <div class="proceed_checkout">
+                    <a href="checkout.html">
+                        <button>PROCEED TO CHECKOUT</button></a></div>
+            </div>
+
+            <div class="cart_hr">
+                <hr style="width: 900px;color: rgb(167, 165, 163);">
+            </div>
+
+            <!-- <div class="restock_basket">
+                <h4>RESTOCK YOUR BASKET</h4>
+            </div>
+
+            <div class="restock_basket_items">
+
+
+            </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <div  id = "footer_container"></div>
+</body>
+
+</html>
+
+<script type="module">
+
+    // header import
+    import header from "./scripts/header.js";
+
+let cart_header = document.getElementById("cart_header");
+cart_header.innerHTML = header();
+
+
+import footer from "./scripts/footer.js";
+
+let footer_container = document.getElementById("footer_container");
+footer_container.innerHTML = footer();
+
+// --------------------------------------------------------------------
+
+
+//cart items-----------------------------------------------------------------------------
+
+var cart = JSON.parse(localStorage.getItem("Product_values"));
+// console.log(cart)
+let all_products = document.getElementById("get_cart_items");
+let total = document.getElementById("total_amt");
+
+cart_items(cart);
+
+function cart_items(arr) {
+    //  console.log("arr", arr);
+
+    arr.forEach((items) => {
+            let div = document.createElement("div");
+            div.id = "mainDiv";
+
+
+            let div1 = document.createElement("div");
+            div1.id = "image_text";
+
+            let img = document.createElement("img");
+            img.src = items.images;
+            img.style.height = "150px";
+            img.style.width = "100px";
+
+            let name_title = document.createElement("p");
+            name_title.innerText = items.title;
+
+            let div2 = document.createElement("div");
+            div2.id = "price_div"
+    
+            let amt = document.createElement("p");
+            amt.innerText = `MRP ${items.price}`;
+
+
+        
+           div1.append(img, name_title);
+           div2.append(amt);
+
+
+            div.append(div1);
+
+            all_products.append(div, div2);
+            // all_products.append(div1);
+
+
+        });
+}
+totalAmt(cart)
+function totalAmt(arr) {
+
+    arr.forEach((items) => {
+    console.log("data:", arr)
+    let div3 = document.createElement("div");
+    let h3 = document.createElement("h3");
+    h3.innerText = `${items.price}.00`;
+
+    div3.append(h3)
+    total.append(div3)
+});
+}
+
+
+
+
+
+
+</script>
