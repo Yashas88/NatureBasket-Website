@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+
+    <style>
+        #checkout_container {
+            /* border: 1px solid black; */
+            width: 1350px;
+            background-color: #ffffff;
+            margin-top: 180px;
+        }
+
+        #checkout_id_steps {
+            border: 1px solid #d3d3d3;
+            height: 44px;
+            width: 100%;
+        }
+
+        #checkout_id_steps>div {
+            display: table-cell;
+        }
+
+        #div_steps1 {
+            float: left;
+            cursor: pointer;
+            font-size: 16px;
+            color: #939393;
+            border-right: 1px solid #cfcfcf;
+            width: 24.9%;
+            height: 100%;
+            text-align: center;
+            cursor: pointer;
+
+        }
+
+        #div_steps2 {
+            border-bottom: 5px solid #5EA70E;
+            border-right: 1px solid #cfcfcf;
+            float: left;
+            font-size: 15px;
+            color: #333333;
+            background: #ededed;
+            width: 24.9%;
+            height: 100%;
+            text-align: center;
+            cursor: pointer;
+
+        }
+
+        #div_steps3 {
+            border-right: 1px solid #cfcfcf;
+            width: 24.9%;
+            height: 100%;
+            float: left;
+            font-size: 15px;
+            color: #333333;
+            background: #ededed;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #div_steps4 {
+            width: 24.5%;
+            height: 100%;
+            float: left;
+            font-size: 15px;
+            color: #333333;
+            background: #ededed;
+            border-right: 1px solid #cfcfcf;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .div_steps_one {
+            padding-top: 15px;
+        }
+
+        /* ------------------------------------------------------- */
+
+        .checkout_head {
+            margin-left: 30px;
+        }
+
+        .btn_for_payment {
+            display: flex;
+            gap: 700px;
+            margin-left: 60px;
+        }
+
+        .proceed_payment {
+            background: #92be4d;
+            width: 250px;
+            height: 30px;
+            border-radius: 10px;
+            padding-top: 15px;
+            cursor: pointer;
+        }
+
+        .address_form {
+            margin-left: 80px;
+        }
+
+        label {
+            color: #939393;
+        }
+
+       .address_form > input[type=text]{
+            width: 300px;
+            height: 30px;
+            border: 1px solid #939393;;
+        }
+        .address_form > input[type=tel]{
+            width: 300px;
+            height: 30px;
+            border: 1px solid #939393;;
+        }
+        input[type=text], [type = tel]:hover {
+            opacity: 0.3;
+        }
+       
+        #address {
+            height: 70px;
+        }
+
+        .hr_line_checkout > hr{
+            width: 900px;
+            text-align: center;
+        }
+
+        #gift_msg {
+            height: 60px;
+            width: 400px;
+            margin-left: 90px;
+            /* color: #939393; */
+        }
+        #save_address {
+            width: 150px;
+            height: 40px;
+            background-color: #5EA70E;
+            border: none;
+            border-radius: 10px;
+            margin-left: 30px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header_container">
+
+    </div>
+
+    <div id="checkout_container">
+
+        <div id="checkout_id_steps">
+            <div id="div_steps1">
+                <div class="div_steps_one">
+                    <span>1</span>
+                    <strong>Login</strong>
+                </div>
+            </div>
+
+            <div id="div_steps2">
+                <div class="div_steps_one">
+                    <span>2</span>
+                    <strong>Address Details</strong>
+                </div>
+            </div>
+
+            <div id="div_steps3">
+                <div class="div_steps_one">
+                    <span>3</span>
+                    <strong>Delivary Slot</strong>
+                </div>
+            </div>
+
+            <div id="div_steps4">
+                <div class="div_steps_one">
+                    <span>4</span>
+                    <strong>Order Summary</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------- -->
+
+        <div class="checkout_head">
+            <h3>ADDRESS &nbsp<span style="color: #b61671;">DETAILS</span></h3>
+        </div>
+
+        <div class="btn_for_payment">
+            <div>
+                <h3>Enter Shipping Address</h3>
+            </div>
+
+            <div class="proceed_payment">
+                <a href="payment.html">
+                    <button style="color: #ffffff;">REVIEW AND PLACE ORDER</button></a></div>
+        </div>
+
+
+    </div>
+    <!-- form----------------------------------------------------- -->
+    <div class="address_form">
+
+        <table>
+            <form id = "form">
+                <tr>
+                    <td> <label for="f_name">First Name</label></td>
+                    <td><input type="text" id="f_name" style="height: 35px;width: 250px;"> </td>
+                </tr>
+
+
+                <tr>
+                    <td><label for="l_name">Last Name</label></td>
+                    <td> <input type="text" id="l_name" style="height: 35px;width: 250px;"></td>
+                </tr>
+
+                <tr>
+                    <td> <label for="address">Address</label></td>
+                    <td> <input type="text" id="address" style="width: 250px;"> </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="landmark">Land Mark</label></td>
+                    <td><input type="text" id="landmark" style="height: 35px;width: 250px;"> </td>
+                </tr>
+
+                <tr>
+                    <td> <label for="pincode">Pin Code</label></td>
+                    <td> <input type="text" id="pincode" style="height: 35px;width: 250px;"></td>
+                </tr>
+
+                <tr>
+                    <td> <label for="area">Area</label></td>
+                    <td> <input type="text" id="area" style="height: 35px;width: 250px;"></td>
+                </tr>
+
+                <tr>
+                    <td> <label for="country">Country</label></td>
+                    <td> <input type="text" id="country" style="height: 35px;width: 250px;"></td>
+                </tr>
+
+                <tr>
+                    <td> <label for="state">State</label></td>
+                    <td> <input type="text" id="state" style="height: 35px;width: 250px;"></td>
+                </tr>
+                <tr>
+                    <td><label for="city">City</label></td>
+                    <td> <input type="text" id="city" style="height: 35px;width: 250px;"> </td>
+                </tr>
+                <tr>
+                    <td> <label for="phone_num">Mobile No</label></td>
+                    <td> <input type="tel" id="phone_num" style="height: 35px;width: 250px;"></td>
+                </tr>
+                <tr>
+                    <td><label for="check_box">Billing Address</label></td>
+                    <td><input type="checkbox" checked="checked"> <span>Same as Billing Address</span></td>
+                </tr>
+
+                <tr>
+                    <td id = "save_address">  <button type="submit" style="color: white;">Save Details</button></td>
+                </tr>
+              
+
+            </form>
+
+        </table>
+    </div>
+
+    <!-- ====================================================== -->
+
+    <div class = "hr_line_checkout"><hr></div>
+    </div>
+
+    <div style="margin-left: 50px;">    
+        <input type="checkbox">
+        <p style="margin-left: 10px; margin-top: -2px;">I would like to gift this order</p>
+    </div>
+
+    <div class="checkout_head" style="margin-left:80px;">
+        <h3>GIFT &nbsp<span style="color: #b61671;">MESSAGE</span>(Optional)</h3>
+    </div>
+
+       <div>
+           <input type="text" placeholder="Enter Your Gift Message" id = "gift_msg">
+
+           <div class="proceed_payment" style="margin-left: 900px;">
+            <a href="payment.html">
+                <button style="color: #ffffff;">REVIEW AND PLACE ORDER</button></a></div>
+       </div>
+
+       <div id = "footer_container" style="margin-top: 20px;">
+
+       </div>
+
+
+
+</body>
+
+</html>
+
+<script type="module">
+    // header import------------
+import header from "./scripts/header.js";
+
+let header_container = document.getElementById("header_container");
+header_container.innerHTML = header();
+
+// footer=============================================
+
+import footer from "./scripts/footer.js";
+
+let footer_container = document.getElementById("footer_container");
+footer_container.innerHTML = footer();
+    
+
+    // save address---------------------------------------------------------------
+
+     // store address which is written in form
+
+ document.querySelector("form").addEventListener("submit",addAddress);
+ var address = JSON.parse(localStorage.getItem("addressInfo")) || [];
+ function addAddress(a) {
+ a.preventDefault();
+ let user_detail = JSON.parse(localStorage.getItem("userDetail"));
+
+ var addressObj = {
+     firstname: form.f_name.value,
+     lastname: form.l_name.value,
+     address: form.address.value,
+     landmark:fprm.landmark.value,
+     pincode: form.pincode.value,
+     area: form.area.value,
+     country: form.country.value,
+     state: form.state.value, 
+     city: form.city.value,
+     phonenum: form.phone_num.value,
+     
+ };
+
+ console.log(addressObj);
+ address.push(addressObj);
+ localStorage.setItem("addAddress", JSON.stringify(address));
+} 
+</script>
